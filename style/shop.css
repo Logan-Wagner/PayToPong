@@ -1,0 +1,20 @@
+body {
+    background-color:beige;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    border:1px solid black;
+
+}
+
+#left {
+    flex-basis: 20%;
+}
+
+#right {
+    flex-shrink: 20%;
+}
