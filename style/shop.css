@@ -19,6 +19,11 @@ p {
     display: flex;
 }
 
+#vert-container {
+    display: flex;
+    flex-direction: column;
+}
+
 #title {
     flex:80%;
 }
@@ -33,8 +38,8 @@ p {
 }
 
 #ad {
-    flex-grow: inherit;
-    height:fit-content;
+    height: 121.5px;
+    align-content: center;
 }
 
 #right {
