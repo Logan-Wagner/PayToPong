@@ -1,16 +1,28 @@
-bank = 100
+class Shop {
+    constructor(amount) {
+        this.bank = amount;
+    }
 
-function buy(item, price) {
-    add_inventory(item);
-    bank -= price;
-    document.getElementById('coins').innerHTML = "$" + bank
+    add_inventory(item) {
+    }
+
+    updateBank() {
+        document.getElementById('coins').innerHTML = "$" + this.bank;
+    }
+
+    buy(item, price) {
+        if (this.bank >= price) {     // no going into debt
+            this.add_inventory(item);
+            this.bank -= price;
+            this.updateBank();
+        }
+    }
+
+    gain(amount) {
+        this.bank += amount;
+        this.updateBank();
+    }
+
 }
 
-function gain(amount) {
-    bank += amount;
-    document.getElementById('coins').innerHTML = "$" + bank
-}
-
-function add_inventory(item) {
-
-}
+const shop = new Shop(100); // used to actually define the shop
