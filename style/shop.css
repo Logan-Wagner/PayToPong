@@ -11,10 +11,14 @@ div {
 
 }
 
+#container {
+    display: flex;
+}
+
 #left {
-    flex-basis: 20%;
+    flex: 20%;
 }
 
 #right {
-    flex-shrink: 20%;
+    flex: 80%;
 }
