@@ -15,10 +15,34 @@ div {
     display: flex;
 }
 
+#title {
+    flex:80%
+}
+
+#coins {
+    flex:20%
+}
+
 #left {
     flex: 20%;
 }
 
+#ad {
+    text-align: center;
+    height:fit-content;
+}
+
 #right {
     flex: 80%;
+}
+
+#item {
+    text-align: center;
+    flex:30%
+}
+
+#button {
+    text-align: center;
+    align-content: center;
+    width: 20%
 }
