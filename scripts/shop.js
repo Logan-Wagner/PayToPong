@@ -1,5 +1,5 @@
 class Inventory {
-    constructor(slot1 = "empty", slot2 = "empty", slot3 = "empty", slot4 = "empty", slot5 = "empty") {
+    constructor(slot1 = "_", slot2 = "_", slot3 = "_", slot4 = "_", slot5 = "_") {
         this.slot1 = slot1;
         this.slot2 = slot2;
         this.slot3 = slot3;
@@ -9,19 +9,19 @@ class Inventory {
 
     // adds item in order of emptied slots
     add(item) {
-        if (this.slot1 == "empty") {
+        if (this.slot1 == "_") {
             this.slot1 = item;
             this.updateSlot(1);
-        } else if (this.slot2 == "empty") {
+        } else if (this.slot2 == "_") {
             this.slot2 = item;
             this.updateSlot(2);
-        } else if (this.slot3 == "empty") {
+        } else if (this.slot3 == "_") {
             this.slot3 = item;
             this.updateSlot(3);
-        } else if (this.slot4 == "empty") {
+        } else if (this.slot4 == "_") {
             this.slot4 = item;
             this.updateSlot(4);
-        } else {
+        } else if (this.slot5 == "_"){
             this.slot5 = item;
             this.updateSlot(5);
         }
@@ -30,22 +30,22 @@ class Inventory {
     // Remove item from inventory
     use(slot) {
         if (slot == 1) {
-            this.slot1 = "empty";
+            this.slot1 = "_";
         } else if (slot == 2) {
-            this.slot2 = "empty";
+            this.slot2 = "_";
         } else if (slot == 3) {
-            this.slot3 = "empty";
+            this.slot3 = "_";
         } else if (slot == 4) {
-            this.slot4 = "empty";
+            this.slot4 = "_";
         } else if (slot == 5) {
-            this.slot5 = "empty";
+            this.slot5 = "_";
         }
 
         this.updateSlot(slot);
     }
 
     slotAvailable() {
-        if (this.slot1 == "empty" | this.slot2 == "empty" | this.slot3 == "empty" | this.slot4 == "empty" | this.slot5 == "empty") {
+        if (this.slot1 == "_" | this.slot2 == "_" | this.slot3 == "_" | this.slot4 == "_" | this.slot5 == "_") {
             return true;
         } else {
             return false;
