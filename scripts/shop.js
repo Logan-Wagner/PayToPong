@@ -11,29 +11,33 @@ class Inventory {
     add(item) {
         if (this.slot1 == "empty") {
             this.slot1 = item;
+            this.updateSlot(1);
         } else if (this.slot2 == "empty") {
             this.slot2 = item;
+            this.updateSlot(2);
         } else if (this.slot3 == "empty") {
             this.slot3 = item;
+            this.updateSlot(3);
         } else if (this.slot4 == "empty") {
             this.slot4 = item;
+            this.updateSlot(4);
         } else {
             this.slot5 = item;
+            this.updateSlot(5);
         }
     }
 
     // Remove item from inventory
     use(slot) {
-
-        if (slot = 1) {
+        if (slot == 1) {
             this.slot1 = "empty";
-        } else if (slot = 2) {
+        } else if (slot == 2) {
             this.slot2 = "empty";
-        } else if (slot = 3) {
+        } else if (slot == 3) {
             this.slot3 = "empty";
-        } else if (slot = 4) {
+        } else if (slot == 4) {
             this.slot4 = "empty";
-        } else if (slot = 5) {
+        } else if (slot == 5) {
             this.slot5 = "empty";
         }
 
@@ -49,16 +53,24 @@ class Inventory {
     }
 
     updateSlot(num) {
+        console.log("updating slot")
         if (num == 1) {
+            console.log("slot 1")
             document.getElementById('slot1').innerHTML = this.slot1;
         } else if (num == 2) {
+            console.log("slot 2")
             document.getElementById('slot2').innerHTML = this.slot2;
         } else if (num == 3) {
+            console.log("slot 3")
             document.getElementById('slot3').innerHTML = this.slot3;
         } else if (num == 4) {
+            console.log("slot 4")
             document.getElementById('slot4').innerHTML = this.slot4;
         } else if (num == 5) {
+            console.log("slot 5")
             document.getElementById('slot5').innerHTML = this.slot5;
+        } else {
+            console.warn("invalid num")
         }
     }
 
