@@ -73,6 +73,26 @@ class Inventory {
         }
     }
 
+    newSlot() {
+        if (this.slot1 == "X") {
+            this.slot1 = "_";
+            this.updateSlot(1);
+        } else if (this.slot2 == "X") {
+            this.slot2 = "_";
+            this.updateSlot(2);
+        } else if (this.slot3 == "X") {
+            this.slot3 = "_";
+            this.updateSlot(3);
+        } else if (this.slot4 == "X") {
+            this.slot4 = "_";
+            this.updateSlot(4);
+        } else if (this.slot5 == "X"){
+            this.slot5 = "_";
+            this.updateSlot(5);
+        } else {
+            console.log("max inventory limit reached")
+        }
+    }
 
 }
 
@@ -91,6 +111,12 @@ class Shop {
             this.inventory.add(item);
             this.bank -= price;
             this.updateBank();
+        } else if (this.bank < price) {
+            console.log("Not enough coin!")
+        } else if (!this.inventory.slotAvailable()) {
+            console.log("Inventory is full!")
+        } else {
+            console.warn("error adding item to inventory")
         }
     }
 
@@ -101,5 +127,6 @@ class Shop {
 
 }
 
+//const inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
 const inv = new Inventory(); // a simple class that stores power-ups
 const shop = new Shop(inv, 100); // used to actually define the shop
