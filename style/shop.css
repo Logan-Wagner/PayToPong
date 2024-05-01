@@ -1,0 +1,60 @@
+body {
+    background-color:beige;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    border:1px solid black;
+}
+
+p {
+    text-align: center;
+    margin-left: auto;
+}
+
+#container {
+    display: flex;
+}
+
+#vert-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    flex:80%;
+}
+
+#coins {
+    flex:20%;
+}
+
+#left {
+    flex: 30%;
+    margin-left: auto;
+}
+
+#ad {
+    height: 122px;
+    align-content: center;
+}
+
+#right {
+    flex: 70%;
+    margin-right: auto;
+}
+
+#item {
+    text-align: center;
+    flex:30%;
+}
+
+#button {
+    text-align: center;
+    align-content: center;
+    margin-left: auto;
+    width: 20%;
+}
