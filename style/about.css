@@ -13,3 +13,13 @@ h2,h3,h4,h5 {
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.grid-container {
+    display:grid;
+    grid-template-columns: 80% 20%;
+}
+
+.grid-container2 {
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
