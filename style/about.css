@@ -1,0 +1,25 @@
+body {
+    background-color:blanchedalmond;
+}
+
+h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+h2,h3,h4,h5 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size:x-large;
+}
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: 80% 20%;
+}
+
+.grid-container2 {
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
