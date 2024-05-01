@@ -127,6 +127,6 @@ class Shop {
 
 }
 
-//const inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
-const inv = new Inventory(); // a simple class that stores power-ups
-const shop = new Shop(inv, 100); // used to actually define the shop
+const inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
+//const inv = new Inventory(); // a simple class that stores power-ups
+const shop = new Shop(inv, 200); // used to actually define the shop
