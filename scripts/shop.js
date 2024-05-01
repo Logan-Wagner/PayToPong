@@ -53,21 +53,20 @@ class Inventory {
     }
 
     updateSlot(num) {
-        console.log("updating slot")
         if (num == 1) {
-            console.log("slot 1")
+            //console.log("slot 1 is " + this.slot1)
             document.getElementById('slot1').innerHTML = this.slot1;
         } else if (num == 2) {
-            console.log("slot 2")
+            //console.log("slot 2 is " + this.slot2)
             document.getElementById('slot2').innerHTML = this.slot2;
         } else if (num == 3) {
-            console.log("slot 3")
+            //console.log("slot 3 is " + this.slot3)
             document.getElementById('slot3').innerHTML = this.slot3;
         } else if (num == 4) {
-            console.log("slot 4")
+            //console.log("slot 4 is " + this.slot4)
             document.getElementById('slot4').innerHTML = this.slot4;
         } else if (num == 5) {
-            console.log("slot 5")
+            //console.log("slot 5 is " + this.slot5)
             document.getElementById('slot5').innerHTML = this.slot5;
         } else {
             console.warn("invalid num")

@@ -60,5 +60,7 @@ p {
 }
 
 .slot {
-    flex:20%
+    flex:20%;
+    align-content: center;
+    text-align: center;
 }
