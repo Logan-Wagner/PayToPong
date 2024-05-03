@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Power Shop</title>
+    <title>Pong Shop</title>
     <link rel="stylesheet" href="style/shop.css">
     <script type="text/javascript" src="scripts/shop.js"></script>
     <script type="text/javascript">
@@ -18,63 +18,59 @@
 
 <html>
     <h1> 
-        <div id="container"> 
-            <div id="title"> Shop </div>
+        <div id="title-container"> 
+            <div id="title"> Pong Shop </div>
             <div id="coins"> $0 </div> 
         </div>
     </h1>
 
-    <div id="container">
+    <div class="container">
         <div id="left">
             <div id="vert-container">
                 <div class="ad">
-                    <button onclick="shop.gain(10)"> <p> Click here to gain 10 coins </p> </button>
+                    <button class="adPress" onclick="shop.gain(10)"> <p> Click here to gain 10 coins </p> </button>
                 </div>
 
                 <div class="ad">
-                    <button onclick="shop.gain(25)"> <p> Click here to gain 25 coins </p> </button>
+                    <button class="adPress" onclick="shop.gain(25)"> <p> Click here to gain 25 coins </p> </button>
                 </div>
 
                 <div class="ad">
-                    <button onclick="shop.gain(50)"> <p> Click here to gain 50 coins </p> </button>
+                    <button class="adPress" onclick="shop.gain(50)"> <p> Click here to gain 50 coins </p> </button>
                 </div>
             </div>
             
         </div>
 
         <div id="right">
-            <p> Want more upgrades? Try these! </p>
-            <div id="container">
+            <div class="container">
                 <div class="item"> <button onclick="shop.buy('Double Trouble',20)"> <p> Double Trouble <br> $20 </p> </button> </div>
                 <div class="item"> <button onclick="shop.buy('Mirror',50)"> <p> Mirror <br> $50 </p> </button> </div>
                 <div class="item"> <button onclick="shop.buy('Gravity',70)"> <p> Gravity <br> $70 </p> </button> </div>
             </div>
 
-            <div id="container">
+            <div class="container">
                 <div class="item"> <button onclick="shop.buy('Chaos',5)"> <p> Chaos <br> $5 </p> </button> </div>
                 <div class="item"> <button onclick="shop.buy('Straight Shot',10)"> <p> Straight Shot <br> $10 </p> </button> </div>
                 <div class="item"> <button onclick="shop.buy('Funnel',90)"> <p> Funnel <br> $90 </p> </button> </div>
             </div>
 
-            <div id="container">
+            <div class="container">
                 <div class="item"> <button onclick="shop.buy('Fog of War',100)"> <p> Fog of War <br> $100 </p> </button> </div>
                 <div class="item"> <button onclick="shop.buy('Future Sight',40)"> <p> Future Sight <br> $40 </p> </button> </div>
                 <div class="item"> <button onclick="shop.buy('Reverse',25)"> <p> Reverse <br> $25 </p> </button> </div>
             </div>
 
-            <div id="container">
-                <p> Want to purchase more coins? </p>
-                <div class="want"> <button onclick=""> <p> Purchase coins </p> </button> </div>
+            <div>
+                <button class="wantPress" onclick=""> <p> Purchase coins </p> </button>
             </div>
 
-            <div id="container">
-                <p> Want to customize your experience? </p>
-                <div class="want"> <button onclick=""> <p> Purchase customizations </p> </button> </div>
+            <div>
+                <button class="wantPress" onclick=""> <p> Purchase customizations </p> </button>
             </div>
 
-            <div id="container">
-                <p> Want to increase your inventory space? </p>
-                <div class="want"> <button onclick="shop.increaseSlots()"> <p> Add slot <br> $1000 </p> </button> </div>
+            <div>
+                <button class="wantPress" onclick="shop.increaseSlots()"> <p> Buy Inventory Slot <br> $1000 </p> </button>
             </div>
 
         </div>
@@ -82,12 +78,12 @@
 
     <h2> Inventory </h2>
 
-    <div id="container">
-        <div class="slot"> <button onclick="inv.use(1)"> <p id="slot1">_</p> </button> </div>
-        <div class="slot"> <button onclick="inv.use(2)"> <p id="slot2">_</p> </button> </div>
-        <div class="slot"> <button onclick="inv.use(3)"> <p id="slot3">_</p> </button> </div>
-        <div class="slot"> <button onclick="inv.use(4)"> <p id="slot4">_</p> </button> </div>
-        <div class="slot"> <button onclick="inv.use(5)"> <p id="slot5">_</p> </button> </div>
+    <div class="container">
+        <div class="slot"> <button class="slotPress" onclick="inv.use(1)"> <p id="slot1">_</p> </button> </div>
+        <div class="slot"> <button class="slotPress" onclick="inv.use(2)"> <p id="slot2">_</p> </button> </div>
+        <div class="slot"> <button class="slotPress" onclick="inv.use(3)"> <p id="slot3">_</p> </button> </div>
+        <div class="slot"> <button class="slotPress" onclick="inv.use(4)"> <p id="slot4">_</p> </button> </div>
+        <div class="slot"> <button class="slotPress" onclick="inv.use(5)"> <p id="slot5">_</p> </button> </div>
     </div>
 
 </html>
