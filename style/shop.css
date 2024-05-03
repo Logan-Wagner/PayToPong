@@ -6,8 +6,19 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 div {
     border:1px solid black;
+}
+
+button {
+    align-content: center;
+    margin-left: auto;
+    width: 100%;
+    height: 100%
 }
 
 p {
@@ -38,7 +49,7 @@ p {
 }
 
 .ad {
-    height: 122px;
+    height: 143.95px;
     align-content: center;
 }
 
@@ -52,7 +63,7 @@ p {
     flex:30%;
 }
 
-#button {
+.want {
     text-align: center;
     align-content: center;
     margin-left: auto;

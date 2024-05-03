@@ -27,17 +27,17 @@ class Inventory {
         }
     }
 
-    // Remove item from inventory
+    // Remove item from inventory (excluding locked slots)
     use(slot) {
-        if (slot == 1) {
+        if (slot == 1 && this.slot1 != "X") {
             this.slot1 = "_";
-        } else if (slot == 2) {
+        } else if (slot == 2 && this.slot2 != "X") {
             this.slot2 = "_";
-        } else if (slot == 3) {
+        } else if (slot == 3 && this.slot3 != "X") {
             this.slot3 = "_";
-        } else if (slot == 4) {
+        } else if (slot == 4 && this.slot4 != "X") {
             this.slot4 = "_";
-        } else if (slot == 5) {
+        } else if (slot == 5 && this.slot5 != "X") {
             this.slot5 = "_";
         }
 
@@ -53,6 +53,7 @@ class Inventory {
     }
 
     updateSlot(num) {
+        // Put whatever is in the back-end to the front-end
         if (num == 1) {
             //console.log("slot 1 is " + this.slot1)
             document.getElementById('slot1').innerHTML = this.slot1;
@@ -94,6 +95,14 @@ class Inventory {
         }
     }
 
+    newSlotAvailable() {
+        if (this.slot1 == "X" | this.slot2 == "X" | this.slot3 == "X" | this.slot4 == "X" | this.slot5 == "X") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 class Shop {
@@ -117,6 +126,16 @@ class Shop {
             console.log("Inventory is full!")
         } else {
             console.warn("error adding item to inventory")
+        }
+    }
+
+    increaseSlots() {
+        if (this.bank >= 1000 && this.inventory.newSlotAvailable()) {
+            this.inventory.newSlot();
+            this.bank -= 1000;
+            this.updateBank();
+        } else {
+            console.log("Max inventory limit reached")
         }
     }
 
