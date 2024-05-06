@@ -23,20 +23,20 @@
             <div id="coins"> $0 </div> 
         </div>
     </h1>
-
+    
     <div class="container">
         <div id="left">
             <div id="vert-container">
                 <div class="ad">
-                    <button class="adPress" onclick="shop.gain(10)"> <p> Click here to gain 10 coins </p> </button>
+                    <button class="adPress" onclick="openPopup(10, 15)"> <p> Click here to gain 10 coins </p> </button>
                 </div>
 
                 <div class="ad">
-                    <button class="adPress" onclick="shop.gain(25)"> <p> Click here to gain 25 coins </p> </button>
+                    <button class="adPress" onclick="openPopup(25, 20)"> <p> Click here to gain 25 coins </p> </button>
                 </div>
 
                 <div class="ad">
-                    <button class="adPress" onclick="shop.gain(50)"> <p> Click here to gain 50 coins </p> </button>
+                    <button class="adPress" onclick="openPopup(50, 35)"> <p> Click here to gain 50 coins </p> </button>
                 </div>
             </div>
             
@@ -84,6 +84,38 @@
         <div class="slot"> <button class="slotPress" onclick="inv.use(3)"> <p id="slot3">_</p> </button> </div>
         <div class="slot"> <button class="slotPress" onclick="inv.use(4)"> <p id="slot4">_</p> </button> </div>
         <div class="slot"> <button class="slotPress" onclick="inv.use(5)"> <p id="slot5">_</p> </button> </div>
+    </div>
+    
+    <div id="overlay"></div>
+
+    <div class="popup" id="coin10">
+        <div class="popupcontrols">
+            <span id="popupclose"> <button onclick="closePopup(10)">X</button> </span>
+        </div>
+        <div class="popupcontent">
+            <h1 id="coin10Time"> 00:15 </h1> 
+        </div>
+        
+    </div>
+
+    <div class="popup" id="coin25">
+        <div class="popupcontrols">
+            <span id="popupclose"> <button onclick="closePopup(25)">X</button> </span> <br>
+        </div>
+        <div class="popupcontent">
+            <h1 id="coin25Time"> 00:20 </h1> 
+        </div>
+        
+    </div>
+
+    <div class="popup" id="coin50">
+        <div class="popupcontrols">
+            <span id="popupclose"> <button onclick="closePopup(50)">X</button> </span>
+        </div>
+        <div class="popupcontent">
+            <h1 id="coin50Time"> 00:35 </h1> 
+        </div>
+        
     </div>
 
 </html>
