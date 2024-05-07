@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pong</title>
+  <link rel="stylesheet" href="style/index.css">
+  <script src="scripts/pong.js"></script>
+  <script src="scripts/paddle.js"></script>
+  <script src="scripts/ball.js"></script>
+</head>
+<body>
+  <div id="top">
+    <h1>Welcome to Pong!!</h1>
+  </div>
+  <div id="middle">
+    <div class="col" id="left">
+      <button type="button">Toggle Multiplayer</button>
+      <div id="shop">
+        <h3>SHOP</h3>
+        <h4>Recommended:</h4>
+        <div class="shopItem" id="item1">Item 1</div>
+        <div class="shopItem" id="item2">Item 2</div>
+        <div class="shopItem" id="item3">Item 3</div>
+        <button type="button">Shop more</button>
+
+      </div>
+    </div>
+    <div class="col" id="center">
+      <canvas id="game"></canvas>
+      <button type="button" onclick="game.start()">Play</button>
+      <button type="button" onclick="game.pause()">pause</button>
+      <div id="powerups"></div>
+    </div>
+    <div class="col" id="right">
+      <div id="ads">ads</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var game = new Pong("game");
+    game.setup();
+
+  </script>
+</body>
+</html>
