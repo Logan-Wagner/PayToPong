@@ -146,25 +146,21 @@ class Shop {
 
 }
 
-// local instances of inventory and shop
-const inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
-const shop = new Shop(inv, 200); // used to actually define the shop
-
 // Micellaneous functions + variables
-
+var timer;
 var timeComplete = false; // checks to see if total waiting time has went through
 
 // based off answer by Mikhail: https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
 // Nadir's answer helped clarify this: https://stackoverflow.com/questions/17883692/how-to-set-time-delay-in-javascript
-function updateTime(sec, coinID){
-    var timer = setInterval(function() {
-        document.getElementById(coinID).innerHTML='00:'+sec;
+function updateTime(sec, coin){
+    timer = setInterval(function() {
+        document.getElementById("coin"+coin+"Time").innerHTML='00:'+sec;
         console.log(sec);
 
         if (sec <= 0) {
             clearInterval(timer);
             timeComplete = true;
-            document.getElementById(coinID).innerHTML='Done! Exit to collect prize';
+            document.getElementById("coin"+coin+"Time").innerHTML='Done! Exit to collect prize';
         }
 
         sec--;
@@ -175,7 +171,9 @@ function updateTime(sec, coinID){
 // This code, along with accompanying HTML and CSS, mainly adapted from https://www.loginradius.com/blog/engineering/simple-popup-tutorial/
 
 // Close Popup Event
-function closePopup(coin) {
+function closePopup(coin, sec, shop) {
+    clearInterval(timer); // stop any potential timer that is running
+    document.getElementById("coin"+coin+"Time").innerHTML='00:'+sec; // reset counter back to original time
     document.getElementById("overlay").style.display = 'none';
     document.getElementById("coin"+coin).style.display = 'none';
     if (timeComplete) {
@@ -186,7 +184,7 @@ function closePopup(coin) {
 
 // Open Popup Event
 function openPopup(coin, sec) {
-    updateTime(sec,"coin"+coin+"Time");
+    updateTime(sec, coin);
     document.getElementById("overlay").style.display = 'block';
     document.getElementById("coin"+coin).style.display = 'block';
 };

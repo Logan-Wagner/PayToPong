@@ -5,6 +5,30 @@
     <link rel="stylesheet" href="style/shop.css">
     <script type="text/javascript" src="scripts/shop.js"></script>
     <script type="text/javascript">
+        var inv;
+        var shop;
+    </script>
+    <script type="text/javascript">
+        if (localStorage.getItem("newcomer") == undefined) {
+            localStorage.setItem("newcomer", true);
+            console.log("Newcomer true");
+        }
+
+        if (localStorage.getItem("newcomer") == false) {
+            // copied over inventory and shop
+            inv = new Inventory(localStorage.getItem("slot1"), localStorage.getItem("slot2"), localStorage.getItem("slot3"), localStorage.getItem("slot4"), localStorage.getItem("slot5")); // a simple class that stores power-ups
+            shop = new Shop(inv, localStorage.getItem("bank")); // used to actually define the shop
+            console.log("loaded from storage");
+
+        } else {
+            // new local instances of inventory and shop
+            inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
+            shop = new Shop(inv, 200); // used to actually define the shop
+            localStorage.setItem("newcomer", false);
+            console.log("Newcomer false");
+            console.log("Default setup method");
+        }
+
         window.onload = function() {
             shop.updateBank();
             inv.updateSlot(1);
@@ -12,6 +36,24 @@
             inv.updateSlot(3);
             inv.updateSlot(4);
             inv.updateSlot(5);
+        };
+
+        window.onclose = function() {
+            localStorage.setItem("bank", shop.bank);
+            localStorage.setItem("slot1", inv.slot1);
+            localStorage.setItem("slot2", inv.slot2);
+            localStorage.setItem("slot3", inv.slot3);
+            localStorage.setItem("slot4", inv.slot4);
+            localStorage.setItem("slot5", inv.slot5);
+        };
+
+        window.onabort = function() {
+            localStorage.setItem("bank", shop.bank);
+            localStorage.setItem("slot1", inv.slot1);
+            localStorage.setItem("slot2", inv.slot2);
+            localStorage.setItem("slot3", inv.slot3);
+            localStorage.setItem("slot4", inv.slot4);
+            localStorage.setItem("slot5", inv.slot5);
         };
     </script>
 </head>
@@ -90,7 +132,7 @@
 
     <div class="popup" id="coin10">
         <div class="popupcontrols">
-            <span id="popupclose"> <button onclick="closePopup(10)">X</button> </span>
+            <span id="popupclose"> <button onclick="closePopup(10, 15, shop)">X</button> </span>
         </div>
         <div class="popupcontent">
             <h1 id="coin10Time"> 00:15 </h1> 
@@ -100,7 +142,7 @@
 
     <div class="popup" id="coin25">
         <div class="popupcontrols">
-            <span id="popupclose"> <button onclick="closePopup(25)">X</button> </span> <br>
+            <span id="popupclose"> <button onclick="closePopup(25, 20, shop)">X</button> </span> <br>
         </div>
         <div class="popupcontent">
             <h1 id="coin25Time"> 00:20 </h1> 
@@ -110,10 +152,11 @@
 
     <div class="popup" id="coin50">
         <div class="popupcontrols">
-            <span id="popupclose"> <button onclick="closePopup(50)">X</button> </span>
+            <span id="popupclose"> <button onclick="closePopup(50, 35, shop)">X</button> </span>
         </div>
         <div class="popupcontent">
             <h1 id="coin50Time"> 00:35 </h1> 
+            <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
         </div>
         
     </div>
