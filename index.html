@@ -22,11 +22,14 @@
     <div class="col" id="left">
       <button type="button">Toggle Multiplayer</button>
       <div id="shop">
-        <h3>SHOP</h3>
+        <div class="container">
+          <div id="shopTitle"> <h3>SHOP</h3> </div>
+          <div id="coins"> $0 </div> 
+        </div> 
         <h4>Recommended:</h4>
-        <div class="shopItem" id="item1">Item 1</div>
-        <div class="shopItem" id="item2">Item 2</div>
-        <div class="shopItem" id="item3">Item 3</div>
+        <div class="shopItem"> <button onclick="shop.buy('Chaos',5)"> <p id="item1">Chaos <br> $5 </p> </button> </div>
+        <div class="shopItem"> <button onclick="shop.buy('Future Sight',40)"> <p id="item2">Future Sight<br> $40 </p> </button> </div>
+        <div class="shopItem"> <button onclick="shop.buy('Reverse',25)"> <p id="item3">Reverse<br> $25 </p> </button> </div>
         <a href="/shop.html"><button type="button">Shop more</button></a>
 
       </div>
@@ -37,21 +40,74 @@
         <button type="button" onclick="game.start()">Play</button>
         <button type="button" onclick="game.pause()">Pause</button>
       </div>
-      <div id="powerups"></div>
+      <div id="powerups">
+        <h2> Inventory </h2>
+        <div class="container">
+            <div class="slot"> <button class="slotPress" onclick="inv.use(1)"> <p id="slot1">_</p> </button> </div>
+            <div class="slot"> <button class="slotPress" onclick="inv.use(2)"> <p id="slot2">_</p> </button> </div>
+            <div class="slot"> <button class="slotPress" onclick="inv.use(3)"> <p id="slot3">_</p> </button> </div>
+            <div class="slot"> <button class="slotPress" onclick="inv.use(4)"> <p id="slot4">_</p> </button> </div>
+            <div class="slot"> <button class="slotPress" onclick="inv.use(5)"> <p id="slot5">_</p> </button> </div>
+        </div>
+      </div>
     </div>
     <div class="col" id="right">
-      <div id="ads">ads</div>
+      <div id="ads">
+        <div class="container">
+          <div id="left">
+              <div id="vert-container">
+                  <div class="ad">
+                      <button class="adPress" onclick="coin5Popup.open()"> <p> Click here to gain 3 coins </p> </button>
+                  </div>
+  
+                  <div class="ad">
+                      <button class="adPress" onclick="coin10Popup.open()"> <p> Click here to gain 10 coins </p> </button>
+                  </div>
+  
+                  <div class="ad">
+                      <button class="adPress" onclick="coin20Popup.open()"> <p> Click here to gain 20 coins </p> </button>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
   </div>
-  <h2> Inventory </h2>
-  <div class="container">
-      <div class="slot"> <button class="slotPress" onclick="inv.use(1)"> <p id="slot1">_</p> </button> </div>
-      <div class="slot"> <button class="slotPress" onclick="inv.use(2)"> <p id="slot2">_</p> </button> </div>
-      <div class="slot"> <button class="slotPress" onclick="inv.use(3)"> <p id="slot3">_</p> </button> </div>
-      <div class="slot"> <button class="slotPress" onclick="inv.use(4)"> <p id="slot4">_</p> </button> </div>
-      <div class="slot"> <button class="slotPress" onclick="inv.use(5)"> <p id="slot5">_</p> </button> </div>
+  <div id="overlay"></div>
+  <div class="popup" id="coin5">
+      <div class="popupcontrols">
+          <span id="popupclose"> <button onclick="coin5Popup.close()">X</button> </span>
+      </div>
+      <div class="popupcontent">
+          <h1 id="coin5Time"> 00:3 </h1> 
+      </div>  
   </div>
+  <div class="popup" id="coin10">
+      <div class="popupcontrols">
+          <span id="popupclose"> <button onclick="coin10Popup.close()">X</button> </span> <br>
+      </div>
+      <div class="popupcontent">
+          <h1 id="coin10Time"> 00:7 </h1> 
+      </div>
+  </div>
+
+  <div class="popup" id="coin20">
+      <div class="popupcontrols">
+          <span id="popupclose"> <button onclick="coin20Popup.close()">X</button> </span>
+      </div>
+      <div class="popupcontent">
+          <h1 id="coin20Time"> 00:20 </h1> 
+          <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+      </div>      
+  </div>
+
   <script type="text/javascript">
+    var inv = new Inventory();
+    var shop = new Shop(inv, 200);
+
+    var coin5Popup = new Popup(5, 3, shop);
+    var coin10Popup = new Popup(10, 7, shop);
+    var coin20Popup = new Popup(20, 15, shop);
+
     var game = new Pong("game");
     game.setup();
 

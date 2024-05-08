@@ -2,6 +2,8 @@ class Shop {
     constructor(inventory, amount) {
         this.inventory = inventory;
         this.bank = amount;
+        this.items = ['Double Trouble', 'Mirror', 'Gravity', 'Chaos', 'Straight Shot', 'Funnel', 'Fog of War', 'Future Sight', 'Reverse'];
+        this.costs = [20, 50, 70, 5, 10, 90, 100, 40, 25];
     }
 
     updateBank() {
@@ -35,6 +37,12 @@ class Shop {
     gain(amount) {
         this.bank += amount;
         this.updateBank();
+    }
+
+    randomItemSelect(id) {
+        var item = Math.floor(Math.random()*8);
+        window.getElementById(id).innerHTML = this.items[item] <br> this.costs[item];
+        return this.items[item], this.costs[item];
     }
 
 }
