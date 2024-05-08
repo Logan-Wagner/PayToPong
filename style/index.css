@@ -9,6 +9,39 @@ body {
   margin: 0px;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  align-content: center;
+  margin-left: auto;
+  width: 100%;
+  background-color: rgb(180, 246, 190);
+}
+
+button:hover {
+  align-content: center;
+  margin-left: auto;
+  width: 100%;
+  background-color:rgb(203, 247, 209);
+}
+
+.container {
+  display: flex;
+}
+
+.slot {
+  flex:20%;
+  align-content: center;
+  text-align: center;
+}
+
 .shopItem {
   margin: 2px;
 }

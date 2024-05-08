@@ -6,6 +6,9 @@
   <script src="scripts/pong.js"></script>
   <script src="scripts/paddle.js"></script>
   <script src="scripts/ball.js"></script>
+  <script src="scripts/inventory.js"></script>
+  <script src="scripts/shop.js"></script>
+  <script src="scripts/popup.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -30,13 +33,23 @@
     </div>
     <div class="col" id="center">
       <canvas id="game"></canvas>
-      <button type="button" onclick="game.start()">Play</button>
-      <button type="button" onclick="game.pause()">pause</button>
+      <div class="container">
+        <button type="button" onclick="game.start()">Play</button>
+        <button type="button" onclick="game.pause()">Pause</button>
+      </div>
       <div id="powerups"></div>
     </div>
     <div class="col" id="right">
       <div id="ads">ads</div>
     </div>
+  </div>
+  <h2> Inventory </h2>
+  <div class="container">
+      <div class="slot"> <button class="slotPress" onclick="inv.use(1)"> <p id="slot1">_</p> </button> </div>
+      <div class="slot"> <button class="slotPress" onclick="inv.use(2)"> <p id="slot2">_</p> </button> </div>
+      <div class="slot"> <button class="slotPress" onclick="inv.use(3)"> <p id="slot3">_</p> </button> </div>
+      <div class="slot"> <button class="slotPress" onclick="inv.use(4)"> <p id="slot4">_</p> </button> </div>
+      <div class="slot"> <button class="slotPress" onclick="inv.use(5)"> <p id="slot5">_</p> </button> </div>
   </div>
   <script type="text/javascript">
     var game = new Pong("game");
