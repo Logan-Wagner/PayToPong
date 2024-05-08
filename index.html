@@ -20,7 +20,7 @@
   </div>
   <div id="middle">
     <div class="col" id="left">
-      <button type="button">Toggle Multiplayer</button>
+      <div> <button type="button"> Toggle Multiplayer </button> </div>
       <div id="shop">
         <div class="container">
           <div id="shopTitle"> <h3>SHOP</h3> </div>
@@ -30,8 +30,7 @@
         <div class="shopItem"> <button onclick="shop.buy('Chaos',5)"> <p id="item1">Chaos <br> $5 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Future Sight',40)"> <p id="item2">Future Sight<br> $40 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Reverse',25)"> <p id="item3">Reverse<br> $25 </p> </button> </div>
-        <a href="/shop.html"><button type="button">Shop more</button></a>
-
+        <div> <a href="/shop.html"> <button type="button"> <p> Shop more </p> </button> </a> </div>
       </div>
     </div>
     <div class="col" id="center">
@@ -101,12 +100,55 @@
   </div>
 
   <script type="text/javascript">
-    var inv = new Inventory();
-    var shop = new Shop(inv, 200);
+    if (localStorage.getItem("newcomer") == undefined) {
+        localStorage.setItem("newcomer", true);
+        console.log("Newcomer true");
+    }
 
-    var coin5Popup = new Popup(5, 3, shop);
-    var coin10Popup = new Popup(10, 7, shop);
-    var coin20Popup = new Popup(20, 15, shop);
+    if (localStorage.getItem("newcomer") == false) {
+        // copied over inventory and shop
+        inv = new Inventory(localStorage.getItem("slot1"), localStorage.getItem("slot2"), localStorage.getItem("slot3"), localStorage.getItem("slot4"), localStorage.getItem("slot5")); // a simple class that stores power-ups
+        shop = new Shop(inv, localStorage.getItem("bank")); // used to actually define the shop
+        console.log("loaded from storage");
+
+    } else {
+        // new local instances of inventory and shop
+        inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
+        shop = new Shop(inv, 200); // used to actually define the shop
+        localStorage.setItem("newcomer", true);
+        console.log("Default setup method");
+    }
+
+    coin10Popup = new Popup(10,15,shop);
+    coin25Popup = new Popup(25,20,shop);
+    coin50Popup = new Popup(50,35,shop);
+
+    window.onload = function() {
+        shop.updateBank();
+        inv.updateSlot(1);
+        inv.updateSlot(2);
+        inv.updateSlot(3);
+        inv.updateSlot(4);
+        inv.updateSlot(5);
+    };
+
+    window.onclose = function() {
+        localStorage.setItem("bank", shop.bank);
+        localStorage.setItem("slot1", inv.slot1);
+        localStorage.setItem("slot2", inv.slot2);
+        localStorage.setItem("slot3", inv.slot3);
+        localStorage.setItem("slot4", inv.slot4);
+        localStorage.setItem("slot5", inv.slot5);
+    };
+
+    window.onabort = function() {
+        localStorage.setItem("bank", shop.bank);
+        localStorage.setItem("slot1", inv.slot1);
+        localStorage.setItem("slot2", inv.slot2);
+        localStorage.setItem("slot3", inv.slot3);
+        localStorage.setItem("slot4", inv.slot4);
+        localStorage.setItem("slot5", inv.slot5);
+    };
 
     var game = new Pong("game");
     game.setup();
