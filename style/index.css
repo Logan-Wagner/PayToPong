@@ -99,6 +99,21 @@ button:hover {
   flex: 1;
 }
 
+.ad {
+  height: 117px;
+  align-content: center;
+}
+
+.adPress {
+  font-weight: bolder;
+  background-color: rgb(245, 236, 70);
+}
+
+.adPress:hover {
+  font-weight: bolder;
+  background-color: rgb(245, 237, 166);
+}
+
 div {
   border: 1px solid black;
 }
