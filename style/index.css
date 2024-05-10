@@ -33,6 +33,14 @@ button:hover {
   background-color:rgb(203, 247, 209);
 }
 
+.close {
+  background-color: rgb(244, 125, 125);
+}
+
+.close:hover {
+  background-color: rgb(250, 177, 177);
+}
+
 .container {
   display: flex;
 }
