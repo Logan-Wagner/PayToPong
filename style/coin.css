@@ -1,0 +1,54 @@
+p {
+    text-align: center;
+    margin-left: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    align-content: center;
+    margin-left: auto;
+    width: 100%;
+    height:100%;
+    background-color: rgb(180, 246, 190);
+}
+  
+button:hover {
+    align-content: center;
+    margin-left: auto;
+    width: 100%;
+    background-color:rgb(203, 247, 209);
+}
+
+.close {
+    background-color: rgb(244, 125, 125);
+}
+
+.close:hover {
+    background-color: rgb(250, 177, 177);
+}
+
+.container {
+    display: flex;
+}
+
+#back {
+    flex:10%;
+}
+
+#title-container {
+    flex:80%;
+}
+
+#coins-container {
+    flex:10%;
+    border:4px solid black;
+}
+
+.purchase {
+    flex:1;
+    height:500px;
+}
