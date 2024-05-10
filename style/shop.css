@@ -46,12 +46,24 @@ p {
     flex-direction: column;
 }
 
+.close {
+    background-color: rgb(244, 125, 125);
+}
+
+.close:hover {
+    background-color: rgb(250, 177, 177);
+}
+
+#back {
+    flex:10%;
+}
+
 #title {
     flex:80%;
 }
 
 #coins {
-    flex:content;
+    flex:10%;
     border:4px solid black;
 }
 

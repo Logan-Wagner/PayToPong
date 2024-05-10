@@ -4,13 +4,18 @@
     <title>Pong Shop</title>
     <link rel="stylesheet" href="style/shop.css">
     <script type="text/javascript" src="scripts/shop.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <script type="text/javascript" src="scripts/inventory.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
     <script type="text/javascript">
         var inv;
         var shop;
+        var coin10Popup;
+        var coin25Popup;
+        var coin50Popup;
     </script>
     <script type="text/javascript">
         if (localStorage.getItem("newcomer") == undefined) {
@@ -28,10 +33,13 @@
             // new local instances of inventory and shop
             inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
             shop = new Shop(inv, 200); // used to actually define the shop
-            localStorage.setItem("newcomer", false);
-            console.log("Newcomer false");
+            localStorage.setItem("newcomer", true);
             console.log("Default setup method");
         }
+
+        coin10Popup = new Popup(10,15,shop);
+        coin25Popup = new Popup(25,20,shop);
+        coin50Popup = new Popup(50,35,shop);
 
         window.onload = function() {
             shop.updateBank();
@@ -63,8 +71,10 @@
 </head>
 
 <html>
+<body>
     <h1> 
         <div id="title-container"> 
+            <div id="back"> <a href="index.html"> <button class="close"> <p> Back </p> </button> </a> </div>
             <div id="title"> Pong Shop </div>
             <div id="coins"> $0 </div> 
         </div>
@@ -74,15 +84,15 @@
         <div id="left">
             <div id="vert-container">
                 <div class="ad">
-                    <button class="adPress" onclick="openPopup(10, 15)"> <p> Click here to gain 10 coins </p> </button>
+                    <button class="adPress" onclick="coin10Popup.open()"> <p> Click here to gain 10 coins </p> </button>
                 </div>
 
                 <div class="ad">
-                    <button class="adPress" onclick="openPopup(25, 20)"> <p> Click here to gain 25 coins </p> </button>
+                    <button class="adPress" onclick="coin25Popup.open()"> <p> Click here to gain 25 coins </p> </button>
                 </div>
 
                 <div class="ad">
-                    <button class="adPress" onclick="openPopup(50, 35)"> <p> Click here to gain 50 coins </p> </button>
+                    <button class="adPress" onclick="coin50Popup.open()"> <p> Click here to gain 50 coins </p> </button>
                 </div>
             </div>
             
@@ -136,7 +146,7 @@
 
     <div class="popup" id="coin10">
         <div class="popupcontrols">
-            <span id="popupclose"> <button onclick="closePopup(10, 15, shop)">X</button> </span>
+            <span id="popupclose"> <button class="close" onclick="coin10Popup.close()">X</button> </span>
         </div>
         <div class="popupcontent">
             <h1 id="coin10Time"> 00:15 </h1> 
@@ -146,7 +156,7 @@
 
     <div class="popup" id="coin25">
         <div class="popupcontrols">
-            <span id="popupclose"> <button onclick="closePopup(25, 20, shop)">X</button> </span> <br>
+            <span id="popupclose"> <button class="close" onclick="coin25Popup.close()">X</button> </span> <br>
         </div>
         <div class="popupcontent">
             <h1 id="coin25Time"> 00:20 </h1> 
@@ -156,7 +166,7 @@
 
     <div class="popup" id="coin50">
         <div class="popupcontrols">
-            <span id="popupclose"> <button onclick="closePopup(50, 35, shop)">X</button> </span>
+            <span id="popupclose"> <button class="close" onclick="coin50Popup.close()">X</button> </span>
         </div>
         <div class="popupcontent">
             <h1 id="coin50Time"> 00:35 </h1> 
@@ -164,6 +174,6 @@
         </div>
         
     </div>
-
+</body>
 </html>
 
