@@ -6,6 +6,7 @@
     <script type="text/javascript" src="scripts/shop.js"></script>
     <script type="text/javascript" src="scripts/inventory.js"></script>
     <script type="text/javascript" src="scripts/popup.js"></script>
+    <script type="text/javascript" src="scripts/cookies.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
@@ -18,22 +19,30 @@
         var coin50Popup;
     </script>
     <script type="text/javascript">
-        if (localStorage.getItem("newcomer") == undefined) {
-            localStorage.setItem("newcomer", true);
-            console.log("Newcomer true");
-        }
+        var bank  = getCookie("bank");
+        var slot1 = getCookie("slot1");
+        var slot2 = getCookie("slot2");
+        var slot3 = getCookie("slot3");
+        var slot4 = getCookie("slot4");
+        var slot5 = getCookie("slot5");
 
-        if (localStorage.getItem("newcomer") == false) {
+        if (bank != "" && slot1 != "" && slot2 != "" && slot3 != "" && slot4 != "" && slot5 != "") {
             // copied over inventory and shop
-            inv = new Inventory(localStorage.getItem("slot1"), localStorage.getItem("slot2"), localStorage.getItem("slot3"), localStorage.getItem("slot4"), localStorage.getItem("slot5")); // a simple class that stores power-ups
-            shop = new Shop(inv, localStorage.getItem("bank")); // used to actually define the shop
+            inv = new Inventory(slot1, slot2, slot3, slot4, slot5); // a simple class that stores power-ups
+            shop = new Shop(inv, parseInt(bank)); // used to actually define the shop
             console.log("loaded from storage");
 
         } else {
             // new local instances of inventory and shop
+            setCookie("bank",  200, 7, "./shop.html")
+            setCookie("slot1", "_", 7, "./shop.html");
+            setCookie("slot2", "_", 7, "./shop.html");
+            setCookie("slot3", "_", 7, "./shop.html");
+            setCookie("slot4", "X", 7, "./shop.html");
+            setCookie("slot5", "X", 7, "./shop.html");
+
             inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
             shop = new Shop(inv, 200); // used to actually define the shop
-            localStorage.setItem("newcomer", true);
             console.log("Default setup method");
         }
 
@@ -51,21 +60,21 @@
         };
 
         window.onclose = function() {
-            localStorage.setItem("bank", shop.bank);
-            localStorage.setItem("slot1", inv.slot1);
-            localStorage.setItem("slot2", inv.slot2);
-            localStorage.setItem("slot3", inv.slot3);
-            localStorage.setItem("slot4", inv.slot4);
-            localStorage.setItem("slot5", inv.slot5);
+            setCookie("bank",  shop.bank, 7, "./shop.html");
+            setCookie("slot1", inv.slot1, 7, "./shop.html");
+            setCookie("slot2", inv.slot2, 7, "./shop.html");
+            setCookie("slot3", inv.slot3, 7, "./shop.html");
+            setCookie("slot4", inv.slot4, 7, "./shop.html");
+            setCookie("slot5", inv.slot5, 7, "./shop.html");
         };
 
         window.onabort = function() {
-            localStorage.setItem("bank", shop.bank);
-            localStorage.setItem("slot1", inv.slot1);
-            localStorage.setItem("slot2", inv.slot2);
-            localStorage.setItem("slot3", inv.slot3);
-            localStorage.setItem("slot4", inv.slot4);
-            localStorage.setItem("slot5", inv.slot5);
+            setCookie("bank",  shop.bank, 7, "./shop.html");
+            setCookie("slot1", inv.slot1, 7, "./shop.html");
+            setCookie("slot2", inv.slot2, 7, "./shop.html");
+            setCookie("slot3", inv.slot3, 7, "./shop.html");
+            setCookie("slot4", inv.slot4, 7, "./shop.html");
+            setCookie("slot5", inv.slot5, 7, "./shop.html");
         };
     </script>
 </head>
