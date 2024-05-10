@@ -67,3 +67,12 @@ div {
   display: flex;
   flex: 9;
 }
+
+.title_header {
+    display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  overflow: scroll;  
+  background-color: DodgerBlue;
+}
