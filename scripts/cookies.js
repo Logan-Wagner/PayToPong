@@ -57,11 +57,11 @@ if (bank != "" && slot1 != "" && slot2 != "" && slot3 != "" && slot4 != "" && sl
     setCookie("slot5", "X", 7, "./shop.html");
     setCookie("ballColor", "ffffff", 7, "./custom.html");
     setCookie("paddleColor", "ffffff", 7, "./custom.html");
-    setCookie("backgroundColor", "black", 7, "./custom.html");
+    setCookie("backgroundColor", "000000", 7, "./custom.html");
 
     inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
     shop = new Shop(inv, 200); // used to actually define the shop
-    custom = new Customization("#ffffff", "#ffffff", "black");
+    custom = new Customization("#ffffff", "#ffffff", "000000");
     console.log("Default setup method");
 }
 
