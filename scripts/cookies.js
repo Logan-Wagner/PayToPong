@@ -61,6 +61,15 @@ window.onload = function() {
   inv.updateSlot(5);
 };
 
+window.onbeforeunload = function() {
+  setCookie("bank",  shop.bank, 7, "./shop.html");
+  setCookie("slot1", inv.slot1, 7, "./shop.html");
+  setCookie("slot2", inv.slot2, 7, "./shop.html");
+  setCookie("slot3", inv.slot3, 7, "./shop.html");
+  setCookie("slot4", inv.slot4, 7, "./shop.html");
+  setCookie("slot5", inv.slot5, 7, "./shop.html");
+};
+
 window.onclose = function() {
   setCookie("bank",  shop.bank, 7, "./shop.html");
   setCookie("slot1", inv.slot1, 7, "./shop.html");
