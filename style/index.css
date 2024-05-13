@@ -29,7 +29,7 @@ h2, h3, h4{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p {
+p,ul {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -54,6 +54,30 @@ button:hover {
 }
 
 .close:hover {
+  background-color: rgb(250, 177, 177);
+}
+
+.game-settings{
+  background-color: rgb(158, 230, 250);
+}
+
+.game-settings:hover {
+  background-color: rgb(178, 233, 248);
+}
+
+#shop-more{
+  background-color: rgb(158, 230, 250);
+}
+
+#shop-more:hover {
+  background-color: rgb(178, 233, 248);
+}
+
+#help-button {
+  background-color: rgb(244, 125, 125);
+}
+
+#help-button:hover {
   background-color: rgb(250, 177, 177);
 }
 
@@ -192,6 +216,13 @@ div {
   margin-left: -250px; /*Half the value of width to center div*/
   margin-top: -250px; /*Half the value of height to center div*/
   z-index: 200;
+}
+
+.popupcontent {
+  align-content:center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  margin: 5px 5px;
 }
 
 #popupclose {

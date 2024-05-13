@@ -17,11 +17,11 @@
 <body>
   <div class="title_header" id="top">
     <div style="flex:20; margin-left: 9px;" ><h1>Welcome to Pong!!</h1></div>
-    <div style="flex:1; margin-right: 9px;"> <a href="about.html"> <button onclick=""> <p> ? </p> </button> </a> </div>
+    <div style="flex:1; margin-right: 9px;"> <button id="help-button" onclick="open_help()"> <p> ? </p> </button> </div>
   </div>
   <div id="middle">
     <div class="col" id="left">
-      <div> <button type="button"> Toggle Multiplayer </button> </div>
+      <div> <button class="game-settings" type="button"> Toggle Multiplayer </button> </div>
       <div id="shop">
         <div class="container">
           <div id="shopTitle"> <h2>SHOP</h2> </div>
@@ -31,14 +31,14 @@
         <div class="shopItem"> <button onclick="shop.buy('Chaos',5)"> <p id="item1">Chaos <br> $5 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Future Sight',40)"> <p id="item2">Future Sight<br> $40 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Reverse',25)"> <p id="item3">Reverse<br> $25 </p> </button> </div>
-        <div> <a href="shop.html"> <button type="button"> <p> Shop more </p> </button> </a> </div>
+        <div> <a href="shop.html"> <button id="shop-more" type="button"> <p> Shop more </p> </button> </a> </div>
       </div>
     </div>
     <div class="col" id="center">
       <canvas id="game"></canvas>
       <div class="container">
-        <button type="button" onclick="game.start()">Play</button>
-        <button type="button" onclick="game.pause()">Pause</button>
+        <button class="game-settings" type="button" onclick="game.start()">Play</button>
+        <button class="game-settings" type="button" onclick="game.pause()">Pause</button>
       </div>
       <div id="powerups">
         <h4> Inventory </h4>
@@ -74,30 +74,43 @@
   </div>
   <div id="overlay"></div>
   <div class="popup" id="coin5">
-      <div class="popupcontrols">
-          <span id="popupclose"> <button class="close" onclick="coin5Popup.close()">X</button> </span>
-      </div>
-      <div class="popupcontent">
-          <p id="coin5Time"> 00:3 </p> 
-      </div>  
+    <span id="popupclose"> <button class="close" onclick="coin5Popup.close()">X</button> </span>
+    <div class="popupcontent">
+        <p id="coin5Time"> 00:3 </p> 
+    </div>  
   </div>
+
   <div class="popup" id="coin10">
-      <div class="popupcontrols">
-          <span id="popupclose"> <button class="close" onclick="coin10Popup.close()">X</button> </span> <br>
-      </div>
-      <div class="popupcontent">
-          <p id="coin10Time"> 00:7 </p> 
-      </div>
+    <span id="popupclose"> <button class="close" onclick="coin10Popup.close()">X</button> </span> <br>
+    <div class="popupcontent">
+      <p id="coin10Time"> 00:7 </p> 
+    </div>
   </div>
 
   <div class="popup" id="coin20">
-      <div class="popupcontrols">
-          <span id="popupclose"> <button class="close" onclick="coin20Popup.close()">X</button> </span>
-      </div>
-      <div class="popupcontent">
-          <p style="font-size: xx-large;" id="coin20Time"> 00:15 </p> 
-          <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-      </div>      
+    <span id="popupclose"> <button class="close" onclick="coin20Popup.close()">X</button> </span>
+    <div class="popupcontent">
+      <p id="coin20Time"> 00:15 </p> 
+      <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+    </div>      
+  </div>
+
+  <div class="popup" id="help_screen">
+    <span id="popupclose"> <button class="close" onclick="close_help()">X</button> </span>
+    <div style="font-size: large;" class="popupcontent"> 
+      <p > <span style="font-size: xx-large;">Welcome to Pong!!</span>  
+        <br><br> Rules are pretty standard: 
+        <ul>
+          <li>Use the 'W' and 'S' keys on your keyboard to move the lefthand paddle up and down.</li>
+          <li>Don't let the ball go past your paddle!</li>
+        </ul>
+        When you win a game, you gain 2 coins. You can purchase power-ups and upgrades in the Shop!
+        <br><br>
+        Good luck!
+        <br><br> <span style="font-size: small;"> To learn more about our site, click <a href="about.html">here</a>. </span>
+      </p> 
+    </div>
+  </div>
   </div>
 
   <script type="text/javascript">
@@ -153,6 +166,15 @@
         localStorage.setItem("slot4", inv.slot4);
         localStorage.setItem("slot5", inv.slot5);
     };
+
+    function open_help(){
+      document.getElementById("overlay").style.display = 'block';
+      document.getElementById("help_screen").style.display = 'block';
+    }
+    function close_help(){
+      document.getElementById("overlay").style.display = 'none';
+      document.getElementById("help_screen").style.display = 'none';
+    }
 
   </script>
 </body>
