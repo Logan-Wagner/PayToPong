@@ -20,29 +20,18 @@
 
 <html>
 <body>
-    <h1> 
-        <div id="title-container"> 
-            <div id="back"> <a href="index.html"> <button class="close"> <p> Back </p> </button> </a> </div>
-            <div id="title"> Pong Shop </div>
-            <div id="coins"> $0 </div> 
-        </div>
-    </h1>
+    <div id="title-container"> 
+        <div id="back"> <a href="index.html"> <button class="close"> <p> Return to Game </p> </button> </a> </div>
+        <div id="title"> <h1> Pong Shop </h1></div>
+        <div id="coins"> <p> $0 </p></div> 
+    </div>
     
     <div class="container">
         <div id="left">
-            <div id="vert-container">
-                <div class="ad">
-                    <button class="adPress" onclick="coin10Popup.open()"> <p> Click here to gain 10 coins </p> </button>
-                </div>
+                <div class="ad"> <button class="adPress" onclick="coin10Popup.open()"> <p> Click here to gain 10 coins </p> </button> </div>
+                <div class="ad"> <button class="adPress" onclick="coin25Popup.open()"> <p> Click here to gain 25 coins </p> </button> </div>
+                <div class="ad"> <button class="adPress" onclick="coin50Popup.open()"> <p> Click here to gain 50 coins </p> </button> </div>
 
-                <div class="ad">
-                    <button class="adPress" onclick="coin25Popup.open()"> <p> Click here to gain 25 coins </p> </button>
-                </div>
-
-                <div class="ad">
-                    <button class="adPress" onclick="coin50Popup.open()"> <p> Click here to gain 50 coins </p> </button>
-                </div>
-            </div>
             
         </div>
 
@@ -97,7 +86,7 @@
             <span id="popupclose"> <button class="close" onclick="coin10Popup.close()">X</button> </span>
         </div>
         <div class="popupcontent">
-            <h1 id="coin10Time"> 00:15 </h1> 
+            <p id="coin10Time"> 00:15 </p> 
         </div>
         
     </div>
@@ -107,7 +96,7 @@
             <span id="popupclose"> <button class="close" onclick="coin25Popup.close()">X</button> </span> <br>
         </div>
         <div class="popupcontent">
-            <h1 id="coin25Time"> 00:20 </h1> 
+            <p id="coin25Time"> 00:20 </p> 
         </div>
         
     </div>
@@ -117,7 +106,7 @@
             <span id="popupclose"> <button class="close" onclick="coin50Popup.close()">X</button> </span>
         </div>
         <div class="popupcontent">
-            <h1 id="coin50Time"> 00:35 </h1> 
+            <p id="coin50Time"> 00:35 </p> 
             <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
         </div>
         
