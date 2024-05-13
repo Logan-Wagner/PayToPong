@@ -1,5 +1,5 @@
 class Popup {
-    constructor(coin, sec, shop) {
+    constructor(coin=0, sec=0, shop=undefined) {
         this.coin = coin;
         this.secInit = sec;
         this.sec = sec;
@@ -48,4 +48,15 @@ class Popup {
         document.getElementById("overlay").style.display = 'block';
         document.getElementById("coin"+this.coin).style.display = 'block';
     }
+
+    openUntimed(id) {
+        document.getElementById("overlay").style.display = 'block';
+        document.getElementById(id).style.display = 'block';
+    }
+
+    closeUntimed(id) {
+        document.getElementById("overlay").style.display = 'none';
+        document.getElementById(id).style.display = 'none';
+    }
+    
 }

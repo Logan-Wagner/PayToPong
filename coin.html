@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Purchase Coins </title>
+    <link rel="stylesheet" href="style/coin.css">
+    <script src="scripts/inventory.js"></script>
+    <script src="scripts/shop.js"></script>
+    <script src="scripts/popup.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <script>
+        var oops = new Popup();
+        var inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
+        var shop = new Shop(inv, 200); // used to actually define the shop
+        window.onload = function() {
+            shop.updateBank();
+        }
+    </script>
+</head>
+
+<html>
+<body>
+    <div class="container"> 
+        <div id="back"> <a href="shop.html"> <button class="close"> <p> Back </p> </button> </a> </div>
+        <div id="title-container"> <h1 id="title"> Purchase Coins </h1> </div>
+        <div id="coins-container"> <p id="coins"> $0 </p> </div> 
+    </div>
+    <div class="container">
+        <div class="purchase"> <button onclick="oops.openUntimed('oops')"> <p> 1000 Coins <br> $10 </p> </button> </div>
+        <div class="purchase"> <button onclick="oops.openUntimed('oops')"> <p> 10,000 Coins <br> $100 </p> </button> </div>
+        <div class="purchase"> <button onclick="oops.openUntimed('oops')"> <p> 1,000,000 Coins <br> $500 </p> </button> </div>
+    </div>
+    <div id="overlay"></div>
+    <div class="popup" id="oops">
+        <div class="popupcontrols">
+            <span id="popupclose"> <button class="close" onclick="oops.closeUntimed('oops')">X</button> </span>
+        </div>
+        <div class="popupcontent">
+            <h1> Oh no! </h1> 
+            <p> You have fallen for the trap! Are you really going to spend your hard-earned cash on a game you found on the internet made by college students? </p>
+        </div>   
+    </div>
+</body>
+</html>

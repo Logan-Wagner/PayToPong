@@ -24,6 +24,11 @@ class Shop {
         }
     }
 
+    customBuy(price) {
+        this.bank -= price;
+        this.updateBank();
+    }
+
     increaseSlots() {
         if (this.bank >= 1000 && this.inventory.newSlotAvailable()) {
             this.inventory.newSlot();
