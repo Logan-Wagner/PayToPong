@@ -178,3 +178,15 @@ div {
   padding: 10px;
   cursor: pointer;
 }
+
+#current-ball-color {
+  color: #ffffff;
+}
+
+#current-paddle-color {
+  color: #ffffff;
+}
+
+#current-background-color {
+  color: black;
+}

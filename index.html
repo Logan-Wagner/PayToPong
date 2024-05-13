@@ -9,6 +9,7 @@
   <script src="scripts/inventory.js"></script>
   <script src="scripts/shop.js"></script>
   <script src="scripts/popup.js"></script>
+  <script src="scripts/custom.js"></script>
   <script src="scripts/cookies.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
@@ -101,9 +102,9 @@
   </div>
 
   <script type="text/javascript">
-    coin5Popup = new Popup(5,3,shop);
-    coin10Popup = new Popup(10,7,shop);
-    coin20Popup = new Popup(20,15,shop);
+    var coin5Popup = new Popup(5,3,shop);
+    var coin10Popup = new Popup(10,7,shop);
+    var coin20Popup = new Popup(20,15,shop);
 
     var game = new Pong("game");
     game.setup();
