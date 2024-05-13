@@ -37,6 +37,8 @@ button:hover {
 
 .container {
     display: flex;
+    align-items: center;
+    align-content: center;
 }
 
 #back {
@@ -54,5 +56,9 @@ button:hover {
 
 .section {
     flex:1;
-    height:500px;
+    margin:5%
+}
+
+label {
+    font-size: x-large;
 }

@@ -3,11 +3,19 @@
 <head>
     <title> Customization </title>
     <link rel="stylesheet" href="style/custom.css">
+    <script src="scripts/inventory.js"></script>
     <script src="scripts/shop.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="./favicon/site.webmanifest">
+    <script>
+        var inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
+        var shop = new Shop(inv, 200); // used to actually define the shop
+        window.onload = function() {
+            shop.updateBank();
+        }
+    </script>
 </head>
 
 <html>
@@ -18,51 +26,26 @@
         <div id="coins-container"> <p id="coins"> $0 </p> </div> 
     </div>
 
-    <div class="container">
-        <div id="background" class="section"> 
-            <form>
-                <h2> Background Color </h2>
-                <p>
-                    <select>
-                        <option> Black </option>
-                        <option selected> Red </option>
-                        <option> Blue </option>
-                        <option> Magenta </option>
-                    </select>
-                </p>
-            </form>
-            <div> <button> <p> Purchase for $10 </p> </button> </div>
+    <div id="ball" class="section"> 
+        <div>
+            <input type="color" id="ball-color" name="Ball Color" value="#ffffff"/>
+            <label for="ball-color"> Ball Color </label>
         </div>
-
-        <div id="paddle" class="section">
-            <form>
-                <h2> Paddle Color </h2>
-                <p>
-                    <select>
-                        <option> Black </option>
-                        <option> Red </option>
-                        <option selected> Blue </option>
-                        <option> Magenta </option>
-                    </select>
-                </p>
-            </form> 
-            <div> <button> <p> Purchase for $50 </p> </button> </div>
+        <div> <button onclick="shop.customBuy(10)"> <p> Purchase for $10 </p> </button> </div>
+    </div>
+    <div id="paddle" class="section">
+        <div>
+            <input type="color" id="paddle-color" name="Paddle Color" value="#ffffff"/>
+            <label for="paddle-color"> Paddle Color </label>
         </div>
-
-        <div id="ball" class="section"> 
-            <form>
-                <h2> Ball Color </h2>
-                <p>
-                    <select>
-                        <option> Black </option>
-                        <option> Red </option>
-                        <option> Blue </option>
-                        <option selected> Magenta </option>
-                    </select>
-                </p>
-            </form>
-            <div> <button> <p> Purchase for $100 </p> </button> </div>
+        <div> <button onclick="shop.customBuy(50)"> <p> Purchase for $50 </p> </button> </div>
+    </div>
+    <div id="background" class="section"> 
+        <div>
+            <input type="color" id="back-color" name="Background Color" value="black"/>
+            <label for="background-color"> Background Color </label>
         </div>
+        <div> <button onclick="shop.customBuy(100)"> <p> Purchase for $100 </p> </button> </div>
     </div>
 </body>
 </html>
