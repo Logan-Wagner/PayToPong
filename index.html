@@ -16,18 +16,18 @@
 </head>
 <body>
   <div class="title_header" id="top">
-    <div><h1>Welcome to Pong!!</h1></div>
-    <div> <a href="about.html"> <button onclick=""> <p> ? </p> </button> </a> </div>
+    <div style="flex:20; margin-left: 9px;" ><h1>Welcome to Pong!!</h1></div>
+    <div style="flex:1; margin-right: 9px;"> <a href="about.html"> <button onclick=""> <p> ? </p> </button> </a> </div>
   </div>
   <div id="middle">
     <div class="col" id="left">
       <div> <button type="button"> Toggle Multiplayer </button> </div>
       <div id="shop">
         <div class="container">
-          <div id="shopTitle"> <h3>SHOP</h3> </div>
+          <div id="shopTitle"> <h2>SHOP</h2> </div>
           <div id="coins"> $0 </div> 
         </div> 
-        <h4>Recommended:</h4>
+        <h3>Recommended:</h3>
         <div class="shopItem"> <button onclick="shop.buy('Chaos',5)"> <p id="item1">Chaos <br> $5 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Future Sight',40)"> <p id="item2">Future Sight<br> $40 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Reverse',25)"> <p id="item3">Reverse<br> $25 </p> </button> </div>
@@ -41,7 +41,7 @@
         <button type="button" onclick="game.pause()">Pause</button>
       </div>
       <div id="powerups">
-        <h2> Inventory </h2>
+        <h4> Inventory </h4>
         <div class="container">
             <div class="slot"> <button class="slotPress" onclick="inv.use(1)"> <p id="slot1">_</p> </button> </div>
             <div class="slot"> <button class="slotPress" onclick="inv.use(2)"> <p id="slot2">_</p> </button> </div>
@@ -78,7 +78,7 @@
           <span id="popupclose"> <button class="close" onclick="coin5Popup.close()">X</button> </span>
       </div>
       <div class="popupcontent">
-          <h1 id="coin5Time"> 00:3 </h1> 
+          <p id="coin5Time"> 00:3 </p> 
       </div>  
   </div>
   <div class="popup" id="coin10">
@@ -86,7 +86,7 @@
           <span id="popupclose"> <button class="close" onclick="coin10Popup.close()">X</button> </span> <br>
       </div>
       <div class="popupcontent">
-          <h1 id="coin10Time"> 00:7 </h1> 
+          <p id="coin10Time"> 00:7 </p> 
       </div>
   </div>
 
@@ -95,7 +95,7 @@
           <span id="popupclose"> <button class="close" onclick="coin20Popup.close()">X</button> </span>
       </div>
       <div class="popupcontent">
-          <h1 id="coin20Time"> 00:15 </h1> 
+          <p style="font-size: xx-large;" id="coin20Time"> 00:15 </p> 
           <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
       </div>      
   </div>

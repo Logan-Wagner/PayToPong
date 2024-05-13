@@ -4,10 +4,13 @@ body {
 
 h1 {
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:xx-large;
 }
 
 h2 {
     text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -30,6 +33,7 @@ button:hover {
 p {
     text-align: center;
     margin-left: auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #title-container {
@@ -56,20 +60,30 @@ p {
 
 #back {
     flex:10%;
+    margin: 5px 5px ;
 }
 
 #title {
     flex:80%;
+    margin: 5px 5px;
 }
 
 #coins {
     flex:10%;
     border:4px solid black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size:xx-large;
+    align-content: center;
+    margin: 5px 5px;
+
 }
 
 #left {
     flex: 30%;
     margin-left: auto;
+    margin: 0px 5px;
+
 }
 
 .ad {
@@ -89,7 +103,7 @@ p {
 
 #right {
     flex: 70%;
-    margin-right: auto;
+    margin-right:5px;
 }
 
 .item {

@@ -7,14 +7,30 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0px;
+  background-color:rgb(236, 253, 251)
 }
 
 h1 {
-  text-align: center;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h2 {
   text-align: center;
+  font-size: large;
+}
+
+h3, h4{
+  font-size: medium;
+  text-align:center;
+}
+
+h2, h3, h4{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -71,6 +87,7 @@ button:hover {
   border:1px solid black;
   align-content: center;
   text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .shopItem {
@@ -149,13 +166,9 @@ div {
 }
 
 .title_header {
-    display: flex;
-  height: 600px;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  overflow: scroll;  
-  background-color: DodgerBlue;}
-  
+  display: flex;
+}
+
 #overlay {
   display: none;
   position: absolute;
