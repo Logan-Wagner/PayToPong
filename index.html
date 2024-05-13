@@ -123,33 +123,6 @@
     var game = new Pong("game");
     game.setup();
 
-    window.onload = function() {
-        shop.updateBank();
-        inv.updateSlot(1);
-        inv.updateSlot(2);
-        inv.updateSlot(3);
-        inv.updateSlot(4);
-        inv.updateSlot(5);
-    };
-
-    window.onclose = function() {
-        localStorage.setItem("bank", shop.bank);
-        localStorage.setItem("slot1", inv.slot1);
-        localStorage.setItem("slot2", inv.slot2);
-        localStorage.setItem("slot3", inv.slot3);
-        localStorage.setItem("slot4", inv.slot4);
-        localStorage.setItem("slot5", inv.slot5);
-    };
-
-    window.onabort = function() {
-        localStorage.setItem("bank", shop.bank);
-        localStorage.setItem("slot1", inv.slot1);
-        localStorage.setItem("slot2", inv.slot2);
-        localStorage.setItem("slot3", inv.slot3);
-        localStorage.setItem("slot4", inv.slot4);
-        localStorage.setItem("slot5", inv.slot5);
-    };
-
     function open_help(){
       document.getElementById("overlay").style.display = 'block';
       document.getElementById("help_screen").style.display = 'block';
