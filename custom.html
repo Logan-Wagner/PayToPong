@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Customization </title>
+    <link rel="stylesheet" href="style/custom.css">
+    <script src="scripts/inventory.js"></script>
+    <script src="scripts/shop.js"></script>
+    <script src="scripts/cookies.js"></script>
+    <script src="scripts/custom.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+</head>
+
+<html>
+<body>
+    <div class="container"> 
+        <div id="back"> <a href="shop.html"> <button class="close"> <p> Back </p> </button> </a> </div>
+        <div id="title-container"> <h1 id="title"> Customization </h1> </div>
+        <div id="coins-container"> <p id="coins"> $0 </p> </div> 
+    </div>
+
+    <div id="ball" class="section"> 
+        <div>
+            <input type="color" id="ball-color" name="Ball Color" value="#ffffff"/>
+            <label for="ball-color"> Ball Color </label>
+        </div>
+        <div> <button onclick="shop.customBuy(10)"> <p> Purchase for $10 </p> </button> </div>
+    </div>
+    <div id="paddle" class="section">
+        <div>
+            <input type="color" id="paddle-color" name="Paddle Color" value="#ffffff"/>
+            <label for="paddle-color"> Paddle Color </label>
+        </div>
+        <div> <button onclick="shop.customBuy(50)"> <p> Purchase for $50 </p> </button> </div>
+    </div>
+    <div id="background" class="section"> 
+        <div>
+            <input type="color" id="back-color" name="Background Color" value="black"/>
+            <label for="background-color"> Background Color </label>
+        </div>
+        <div> <button onclick="shop.customBuy(100)"> <p> Purchase for $100 </p> </button> </div>
+    </div>
+</body>
+</html>

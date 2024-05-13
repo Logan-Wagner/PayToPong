@@ -6,67 +6,15 @@
     <script type="text/javascript" src="scripts/shop.js"></script>
     <script type="text/javascript" src="scripts/inventory.js"></script>
     <script type="text/javascript" src="scripts/popup.js"></script>
+    <script type="text/javascript" src="scripts/cookies.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="./favicon/site.webmanifest">
     <script type="text/javascript">
-        var inv;
-        var shop;
-        var coin10Popup;
-        var coin25Popup;
-        var coin50Popup;
-    </script>
-    <script type="text/javascript">
-        if (localStorage.getItem("newcomer") == undefined) {
-            localStorage.setItem("newcomer", true);
-            console.log("Newcomer true");
-        }
-
-        if (localStorage.getItem("newcomer") == false) {
-            // copied over inventory and shop
-            inv = new Inventory(localStorage.getItem("slot1"), localStorage.getItem("slot2"), localStorage.getItem("slot3"), localStorage.getItem("slot4"), localStorage.getItem("slot5")); // a simple class that stores power-ups
-            shop = new Shop(inv, localStorage.getItem("bank")); // used to actually define the shop
-            console.log("loaded from storage");
-
-        } else {
-            // new local instances of inventory and shop
-            inv = new Inventory("_","_","_","X","X"); // a simple class that stores power-ups
-            shop = new Shop(inv, 200); // used to actually define the shop
-            localStorage.setItem("newcomer", true);
-            console.log("Default setup method");
-        }
-
-        coin10Popup = new Popup(10,15,shop);
-        coin25Popup = new Popup(25,20,shop);
-        coin50Popup = new Popup(50,35,shop);
-
-        window.onload = function() {
-            shop.updateBank();
-            inv.updateSlot(1);
-            inv.updateSlot(2);
-            inv.updateSlot(3);
-            inv.updateSlot(4);
-            inv.updateSlot(5);
-        };
-
-        window.onclose = function() {
-            localStorage.setItem("bank", shop.bank);
-            localStorage.setItem("slot1", inv.slot1);
-            localStorage.setItem("slot2", inv.slot2);
-            localStorage.setItem("slot3", inv.slot3);
-            localStorage.setItem("slot4", inv.slot4);
-            localStorage.setItem("slot5", inv.slot5);
-        };
-
-        window.onabort = function() {
-            localStorage.setItem("bank", shop.bank);
-            localStorage.setItem("slot1", inv.slot1);
-            localStorage.setItem("slot2", inv.slot2);
-            localStorage.setItem("slot3", inv.slot3);
-            localStorage.setItem("slot4", inv.slot4);
-            localStorage.setItem("slot5", inv.slot5);
-        };
+        var coin10Popup = new Popup(10,15,shop);
+        var coin25Popup = new Popup(25,20,shop);
+        var coin50Popup = new Popup(50,35,shop);
     </script>
 </head>
 
