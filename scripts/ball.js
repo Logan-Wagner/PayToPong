@@ -1,18 +1,18 @@
 class Ball {
-  constructor(x, y, xSpeed, ySpeed, radius) {
+  constructor(x, y, dimension, xSpeed, ySpeed) {
     this.x = x;
     this.y = y;
-    this.radius = radius;
+    this.dimension = dimension;
     this.xSpeed = xSpeed;
     this.ySpeed = ySpeed;
   }
 
   getEdges() {
     var edges = new Map();
-    edges.set("left", this.x - this.radius)
-    edges.set("right", this.x + this.radius)
-    edges.set("top", this.y - this.radius)
-    edges.set("bottom", this.y + this.radius)
+    edges.set("left", this.x - (this.dimension / 2))
+    edges.set("right", this.x + (this.dimension / 2))
+    edges.set("top", this.y - (this.dimension / 2))
+    edges.set("bottom", this.y + (this.dimension / 2))
     return edges;
   }
 
@@ -34,10 +34,10 @@ class Ball {
   }
 
   setTop(val) {
-    this.y = val + this.radius;
+    this.y = val + (this.dimension / 2);
   }
 
   setBottom(val) {
-    this.y = val - this.radius;
+    this.y = val - (this.dimension / 2);
   }
 }
