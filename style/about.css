@@ -25,3 +25,11 @@ p {
     display:grid;
     grid-template-columns: 33% 33% 33%;
 }
+
+#return_to_game {
+    background-color: rgb(244, 125, 125);
+}
+
+#return_to_game:hover {
+    background-color: rgb(250, 177, 177);
+}
