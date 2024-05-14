@@ -204,6 +204,7 @@ class Pong {
     this.context.font = "50px serif"
     if (side === "Left") {
       this.context.fillText("Congratulations, you won and earned 10 coins", 500, 250, 750)
+      shop.gain(10);
     } else {
       this.context.fillText("You lost, better luck next time", 500, 250 ,750)
     }
