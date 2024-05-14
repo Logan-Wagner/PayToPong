@@ -114,6 +114,22 @@ button:hover {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#play-button {
+  width: 100px;
+  height: 114.4px;
+  position: relative;
+  left: 460px;
+  top: 193.2px;
+}
+
+#play-again {
+  width: 150px;
+  height: 35px;
+  position: relative;;
+  left: 425px;
+  top: 275px;
+}
+
 .shopItem {
   margin: 2px;
 }
@@ -123,6 +139,7 @@ button:hover {
 }
 
 #game {
+  margin-top: -114.4px;
   flex: 5;
   max-height: 500px;
   background-color: black;

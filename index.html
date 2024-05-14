@@ -27,8 +27,8 @@
       <div id="shop">
         <div class="container">
           <div id="shopTitle"> <h2>SHOP</h2> </div>
-          <div id="coins"> $0 </div> 
-        </div> 
+          <div id="coins"> $0 </div>
+        </div>
         <h3>Recommended:</h3>
         <div class="shopItem"> <button onclick="shop.buy('Chaos',5)"> <p id="item1">Chaos <br> $5 </p> </button> </div>
         <div class="shopItem"> <button onclick="shop.buy('Future Sight',40)"> <p id="item2">Future Sight<br> $40 </p> </button> </div>
@@ -37,11 +37,11 @@
       </div>
     </div>
     <div class="col" id="center">
+      <div id="game-wrapper">
+        <div id="play-button" onclick="game.start()"></div>
+        <div id="play-again" onclick="game.replay()"></div>
       <canvas id="game"></canvas>
-      <div class="container">
-        <button class="game-settings" type="button" onclick="game.start()">Play</button>
-        <button class="game-settings" type="button" onclick="game.pause()">Pause</button>
-      </div>
+    </div>
       <div id="powerups">
         <h4> Inventory </h4>
         <div class="container">
@@ -61,11 +61,11 @@
                   <div class="ad">
                       <button class="adPress" onclick="coin5Popup.open()"> <p> Click here to gain 5 coins </p> </button>
                   </div>
-  
+
                   <div class="ad">
                       <button class="adPress" onclick="coin10Popup.open()"> <p> Click here to gain 10 coins </p> </button>
                   </div>
-  
+
                   <div class="ad">
                       <button class="adPress" onclick="coin20Popup.open()"> <p> Click here to gain 20 coins </p> </button>
                   </div>
@@ -78,30 +78,30 @@
   <div class="popup" id="coin5">
     <span id="popupclose"> <button class="close" onclick="coin5Popup.close()">X</button> </span>
     <div class="popupcontent">
-        <p id="coin5Time"> 00:3 </p> 
-    </div>  
+        <p id="coin5Time"> 00:3 </p>
+    </div>
   </div>
 
   <div class="popup" id="coin10">
     <span id="popupclose"> <button class="close" onclick="coin10Popup.close()">X</button> </span> <br>
     <div class="popupcontent">
-      <p id="coin10Time"> 00:7 </p> 
+      <p id="coin10Time"> 00:7 </p>
     </div>
   </div>
 
   <div class="popup" id="coin20">
     <span id="popupclose"> <button class="close" onclick="coin20Popup.close()">X</button> </span>
     <div class="popupcontent">
-      <p id="coin20Time"> 00:15 </p> 
+      <p id="coin20Time"> 00:15 </p>
       <!--<iframe width=500 height=250 src="https://www.youtube.com/embed/Pv0iVoSZzN8?si=_WL-h0lk7dJn_FM7&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-    </div>      
+    </div>
   </div>
 
   <div class="popup" id="help_screen">
     <span id="popupclose"> <button class="close" onclick="close_help()">X</button> </span>
-    <div style="font-size: large;" class="popupcontent"> 
-      <p > <span style="font-size: xx-large;">Welcome to Pong!!</span>  
-        <br><br> Rules are pretty standard: 
+    <div style="font-size: large;" class="popupcontent">
+      <p > <span style="font-size: xx-large;">Welcome to Pong!!</span>
+        <br><br> Rules are pretty standard:
         <ul>
           <li>Use the 'W' and 'S' keys on your keyboard to move the lefthand paddle up and down.</li>
           <li>Don't let the ball go past your paddle!</li>
@@ -110,7 +110,7 @@
         <br><br>
         Good luck!
         <br><br> <span style="font-size: small;"> To learn more about our site, click <a href="about.html">here</a>. </span>
-      </p> 
+      </p>
     </div>
   </div>
   </div>
