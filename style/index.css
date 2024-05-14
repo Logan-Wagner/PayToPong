@@ -236,14 +236,19 @@ div {
 }
 
 .popupcontent {
-  align-content:center;
+  align-content: center;
+  text-align: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: xx-large;
   margin: 5px 5px;
+  height: 100%;
+  width: 100%;
+  margin-top: -44.9px;
 }
 
 #popupclose {
-  float: right;
+  position: absolute;
+  right: 0px;
   padding: 10px;
   cursor: pointer;
 }
@@ -259,4 +264,8 @@ div {
 
 #current-background-color {
   color: black;
+}
+
+.popupcontent > p {
+  left: 50%;
 }
