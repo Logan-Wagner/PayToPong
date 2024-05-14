@@ -30,16 +30,19 @@ class Inventory {
     // Remove item from inventory (excluding locked slots)
     use(slot) {
         if (slot == 1 && this.slot1 != "X") {
-            game.addModifier(this.slot1)
-            this.slot1 = "_"
+            game.addModifier(this.slot1);
+            this.slot1 = "_";
         } else if (slot == 2 && this.slot2 != "X") {
-            game.addModifier(this.slot2)
+            game.addModifier(this.slot2);
             this.slot2 = "_";
         } else if (slot == 3 && this.slot3 != "X") {
+            game.addModifier(this.slot3);
             this.slot3 = "_";
         } else if (slot == 4 && this.slot4 != "X") {
+            game.addModifier(this.slot4);
             this.slot4 = "_";
         } else if (slot == 5 && this.slot5 != "X") {
+            game.addModifier(this.slot5);
             this.slot5 = "_";
         }
 
