@@ -20,6 +20,9 @@ class Pong {
     this.rightPaddleUp = false;
     this.rightPaddleDown = false;
     this.betweenRounds = false;
+    this.modifiers = {
+      reverse: 0,
+    }
   }
 
 
@@ -88,15 +91,24 @@ class Pong {
     // Move the right paddle
     var rightPaddleEdges = this.rightPaddle.getEdges();
     if (this.ball.y > rightPaddleEdges.get("bottom")) { // ball is below the paddle
-      this.rightPaddle.move("Down");
-      if (rightPaddleEdges.get("bottom") > this.canvas.height) {
-        this.rightPaddle.setBottom(this.canvas.height);
+      if (this.modifiers.reverse > 0) {
+        this.rightPaddle.move("Up")
+      } else {
+        this.rightPaddle.move("Down")
       }
     } else if (this.ball.y < rightPaddleEdges.get("top")){ // ball is above the paddle
-      this.rightPaddle.move("Up");
-      if (rightPaddleEdges.get("top") < 0) {
-        this.rightPaddle.setTop(0);
+      if (this.modifiers.reverse > 0) {
+        this.rightPaddle.move("Down")
+      } else {
+        this.rightPaddle.move("Up")
       }
+    }
+    // Border collision detection
+    if (rightPaddleEdges.get("top") < 0) {
+      this.rightPaddle.setTop(0);
+    }
+    if (rightPaddleEdges.get("bottom") > this.canvas.height) {
+      this.rightPaddle.setBottom(this.canvas.height);
     }
 
     // Move the ball
@@ -158,7 +170,9 @@ class Pong {
     this.drawCenterLine();
     this.drawScores();
 
-
+    if (this.modifiers.reverse > 0) {
+      this.modifiers.reverse--;
+    }
     // Request another animation frame
     this.animationFrameId = window.requestAnimationFrame(() => this.run());
   }
@@ -260,6 +274,9 @@ class Pong {
     this.drawScores();
     this.drawBall();
     this.drawCenterLine();
+    this.modifiers = {
+      reverse: 0
+    }
 
     this.animationFrameId = window.requestAnimationFrame(() => this.run())
   }
@@ -267,6 +284,11 @@ class Pong {
   pause() {
     window.cancelAnimationFrame(this.animationFrameId);
     this.animationFrameId = -1;
+  }
+
+  addModifier(name) {
+    if (name === "Reverse")
+    this.modifiers.reverse += 3 * 60
   }
 }
 
